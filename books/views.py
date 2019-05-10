@@ -3,7 +3,8 @@ from .models import Book
 # Create your views here.
 def book_view(request):
 	if(Book.objects.first()):
-		book = Book.objects.first().content_pdf
+		book = Book.objects.first()
+		# print(help(book))
 		context = {
 			'x': book,
 		}

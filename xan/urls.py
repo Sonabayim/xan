@@ -18,10 +18,11 @@ from django.contrib import admin
 from django.conf.urls.static import static
 from django.conf import settings
 from django.views.generic.base import TemplateView
-from books.views import book_view
+from books.views import book_view, search_view
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', book_view),
+    url(r'^$',search_view),
+    url(r'^(?P<id>\d+)/$', book_view),
 
 ]
 

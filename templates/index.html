@@ -5,11 +5,12 @@
 	<link rel="stylesheet" type="text/css" href={% static "css/ulala.css" %} />
 </head>
 <body>
-<h1>Hey bee</h1>
+<!-- <h1>Hey bee</h1>
 <h2>{{ x.image.url }}</h2>
 <h2>{{ x.content_pdf.url }}</h2>
-<!-- <object data="{{ x.content_pdf.url }}"></object> -->
-<object data="{{ x.content_pdf.url }}" type="application/pdf" width="800" height="800">
+<h2>{{ x.name }}</h2>
+ --><!-- <object data="{{ x.content_pdf.url }}"></object> -->
+<object data="{{ x.content_pdf.url }}" type="application/pdf" width="800" height="720">
   <!-- <p>Alternative text - include a link <a href="{{ x.content_pdf.url }}">to the PDF!</a></p> -->
 </object>
 <a href="{{ x.content_pdf.url }}">Muah</a>

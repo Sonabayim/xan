@@ -1,0 +1,6 @@
+{% for x in books %}
+<p>
+	<a href="{{ x.id }}">{{ x }} page</a>
+	<a href="{{ x.content_pdf.url }}">{{ x }} pdf</a>
+</p>
+{% endfor %}

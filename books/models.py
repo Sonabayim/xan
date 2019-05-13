@@ -6,6 +6,9 @@ class Book(models.Model):
 	content_pdf   = models.FileField()	
 	content_text  = models.TextField(null=True,blank=True)
 	image 		  = models.ImageField()
+
+	def __str__(self):
+		return str(self.name)
 	# user		= models.ForeignKey(User, default=1)
 	# content		= models.CharField(max_length=255, null=True,blank=False)
 	# liked 		= models.ManyToManyField(User, blank=True, related_name='liked') 

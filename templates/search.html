@@ -1,6 +1,11 @@
-{% for x in books %}
+{% include 'search_form.html' %}<br/>
+{% if object_list %}
+{% for x in object_list %}
 <p>
 	<a href="{{ x.id }}">{{ x }} page</a>
 	<a href="{{ x.content_pdf.url }}">{{ x }} pdf</a>
 </p>
 {% endfor %}
+{% else %}
+<p>No such books</p>
+{% endif %}

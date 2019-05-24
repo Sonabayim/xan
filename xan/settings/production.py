@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'uxm&_1i33lz8$h%=!3&(-20bnt6=hux5n!p#n=@)9i6ql(qs^7'
+SECRET_KEY = os.environ.get('SECRET_KEY','uxm&_1i33lz8$h%=!3&(-20bnt6=hux5n!p#n=@)9i6ql(qs^7')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -81,12 +81,16 @@ DATABASES = {
     }
 }
 
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+DATABASES['default']['CONN_MAX_AGE'] = 500
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'nicechodb',
-#         'USER': 'nice',
-#         'PASSWORD': 'nicecho0205',
+#         'NAME': 'xandb',
+#         'USER': 'xan',
+#         'PASSWORD': 'xanplus0205',
 #         'HOST': 'localhost',
 #         'PORT': '',
 #     }

@@ -27,8 +27,8 @@ from books.views import (
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     
-    url(r'^$', TemplateView.as_view(template_name='index1.html')),
-    url(r'^lol$',SearchView.as_view(),name='list'),
+    url(r'^$', SearchView.as_view(template_name='index1.html'),name='list'),
+    url(r'^lol$',SearchView.as_view()),#,name='list'
     url(r'^(?P<id>\d+)/$', book_view),
 
 ]

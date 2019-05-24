@@ -109,11 +109,21 @@ Fixed Navigation
  <!--
 Welcome Slider
 ==================================== -->
+
 <section class="hero-area">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6">
-				
+				{% if object_list %}
+{% for x in object_list %}
+<p>
+	<!-- <a href="{{ x.id }}">{{ x }} page</a> -->
+	<a href="{{ x.content_pdf.url }}">{{ x }} pdf</a>
+</p>
+{% endfor %}
+{% else %}
+<p>No such books</p>
+{% endif %}
 			</div>
 			<div class="col-md-6">
 				<div class="block">
@@ -125,6 +135,10 @@ Welcome Slider
 						</li>
 					</ul>
 				</div>
+				<form method="GET" action='{% url "list" %}'>
+					<input type="text" name="q" placeholder="Search">
+					<input type="submit" value="Search">
+				</form>
 			</div>
 		</div>
 	</div>

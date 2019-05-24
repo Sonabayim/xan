@@ -94,10 +94,10 @@ Fixed Navigation
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto">
                             
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a class="nav-link" href="contact.html">Contact</a>
                             </li>
-                           
+                            -->
                         </ul>
                     </div>
                 </nav>
@@ -114,30 +114,23 @@ Welcome Slider
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6">
-				{% if object_list %}
-{% for x in object_list %}
-<p>
-	<!-- <a href="{{ x.id }}">{{ x }} page</a> -->
-	<a href="{{ x.content_pdf.url }}">{{ x }} pdf</a>
-</p>
-{% endfor %}
-{% else %}
-<p>No such books</p>
-{% endif %}
-			</div>
-			<div class="col-md-6">
 				<div class="block">
 					<h2>Xan ++</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At quo dolor est incidunt suscipit minima, alias numquam voluptatum rerum porro. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore at laboriosam unde repellat id expedita quae quisquam libero officia consequatur. </p>
+					<p>The project is developed for blind people who wants to direct access to books without clicking annoying links.</p>
 					<ul class="list-inline wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".7s">
 						<li class="list-inline-item">
 							<!-- <a href="https://themefisher.com/" target="_blank" class="btn btn-main">Download More</a> -->		
 						</li>
 					</ul>
 				</div>
+			</div>
+			<div class="col-md-6">
+				
 				<form method="GET" action='{% url "list" %}'>
-					<input type="text" name="q" placeholder="Search">
-					<input type="submit" value="Search">
+					<!-- Search form -->
+<input class="form-control" type="text" name="q" placeholder="Search" aria-label="Search">
+					<!-- <input type="text" name="q" placeholder="Search"> -->
+					<input type="submit" class="btn btn-secondary btn-md" style="margin:10px; border-radius: 10px;position: relative;right:10px" value="Search">
 				</form>
 			</div>
 		</div>
@@ -158,6 +151,17 @@ Start About Section
 	<div class="container">
 		<div class="row mb-50 justify-content-center">
 			<div class="col-md-5 col-sm-12 text-center offset-md-1">
+				<h2>Books:</h2>
+				{% if object_list %}
+{% for x in object_list %}
+<p>
+	<!-- <a href="{{ x.id }}">{{ x }} page</a> -->
+	<a href="{{ x.content_pdf.url }}">{{ x }} pdf</a>
+</p>
+{% endfor %}
+{% else %}
+<p>No such books</p>
+{% endif %}
 				<!-- <img src="images/about/about-1.jpg" class="img-fluid rounded shadow" alt=""> -->
 			<!-- </div>
 			<div class="col-md-5 col-sm-12">
@@ -220,7 +224,7 @@ Start About Section
 			<!-- / End Contact Details -->
 				
 			<!-- Contact Form -->
-			<div class="contact-form col-12 col-md-6 " >
+			<!-- <div class="contact-form col-12 col-md-6 " >
 				<form id="contact-form" method="post" action="sendmail.php" role="form">
 				
 					<div class="form-group">
@@ -252,7 +256,7 @@ Start About Section
 					</div>						
 					
 				</form>
-			</div>
+			</div> -->
 			<!-- ./End Contact Form -->
 		</div> <!-- end row -->
 		<div class="row">

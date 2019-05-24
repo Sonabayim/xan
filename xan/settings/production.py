@@ -48,7 +48,7 @@ MIDDLEWARE = [
 	'django.contrib.auth.middleware.AuthenticationMiddleware',
 	'django.contrib.messages.middleware.MessageMiddleware',
 	'whitenoise.middleware.WhiteNoiseMiddleware',
-	'django.middleware.clickjacking.XFrameOptionsMiddleware',
+	'whitenoise.storage.CompressedManifestStaticFilesStorage',
 
 ]
 

@@ -1,1 +1,1 @@
-web: gunicorn xan.wsgi
+web: gunicorn xanplusplus.wsgi
